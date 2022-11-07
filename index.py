@@ -25,7 +25,16 @@ def read():
     collection_ref = db.collection("111")    
     docs = collection_ref.order_by("mail", direction=firestore.Query.DESCENDING).get()    
     for doc in docs:         
-        Result += "文件內容：{}".format(doc.to_dict()) + "<br>"    
+            dict = doc.to_dict()
+    if cond in dict["Course"]:
+
+        #print("{}老師開的{}課程,每週{}於{}上課".format(dict["Leacture"], dict["Course"],  dict["Time"],dict["Room"]))
+        result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程,每週"
+        result += dict["Time"] + "於" + dict["Room"] + "上課\n"
+        print(result)
+
+        #Result += "文件內容：{}".format(doc.to_dict()) + "<br>"    
+        
     return Result
 
 @app.route("/mis")
