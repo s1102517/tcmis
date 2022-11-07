@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    homepage = "<h1>資管二A 袁家偉 411025172 袁家偉的求職相關資訊</h1>"
+    homepage = "<h1>袁家偉 Python+flask+Vercel網頁</h1>"
     homepage += "<a href=/mis>MIS</a><br>"
     homepage += "<a href=/today>顯示日期時間</a><br>"
     homepage += "<a href=/welcome?nick=袁家偉>傳送使用者暱稱</a><br>"
